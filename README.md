@@ -1,1 +1,1 @@
-# Employee-Team-Generator
+# Team Generator
