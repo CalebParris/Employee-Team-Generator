@@ -1,0 +1,20 @@
+.jumbotron{
+    background-color: aquamarine;
+}
+
+body {
+    background-color: indigo;
+}
+
+.card-header {
+    background-color: deepskyblue;
+}
+
+.card-body {
+    background-color: aquamarine;
+}
+
+.card {
+    margin-right: 20px;
+    box-shadow: 10px 10px 8px darkseagreen;
+}
