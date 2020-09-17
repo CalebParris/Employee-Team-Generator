@@ -10,21 +10,6 @@ const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./lib/htmlRenderer");
 
-// After you have your html, you're now ready to create an HTML file using the HTML
-// returned from the `render` function. Now write it to a file named `team.html` in the
-// `output` folder. You can use the variable `outputPath` above target this location.
-// Hint: you may need to check if the `output` folder exists and create it if it
-// does not.
-
-// HINT: each employee type (manager, engineer, or intern) has slightly different
-// information; write your code to ask different questions via inquirer depending on
-// employee type.
-
-// HINT: make sure to build out your classes first! Remember that your Manager, Engineer,
-// and Intern classes should all extend from a class named Employee; see the directions
-// for further information. Be sure to test out each class and verify it generates an
-// object with the correct structure and methods. This structure will be crucial in order
-// for the provided `render` function to work! ```
 const employees = [];
 
 function managerInfo(){
@@ -51,11 +36,8 @@ function managerInfo(){
         }
     ])
     .then(function(answers){
-        console.log(answers);
-        
         let manager = new Manager(answers.name, answers.id, answers.email, answers.officeNumber);
         employees.push(manager);
-        console.log(employees);
 
         addTeam();
     })
@@ -70,7 +52,6 @@ function addTeam(){
         }
     ])
     .then(function(answers){
-        console.log(answers);
         if (answers.addMember){
             inquirer.prompt([
                 {
@@ -81,7 +62,6 @@ function addTeam(){
                 }
             ])
             .then(function(answers){
-                console.log(answers);
                 let newRole, extraRoleInfo;
                 if (answers.nextRole === "Engineer"){
                     newRole = "Engineer";
@@ -113,26 +93,23 @@ function addTeam(){
                     }
                 ])
                 .then(function(answers){
-                    console.log(newRole);
-                    console.log(answers);
                     if (newRole === "Engineer"){
                         let engineer = new Engineer(answers.name, answers.id, answers.email, answers.extraInfo);
                         employees.push(engineer);
-                        console.log(employees);
                     } else {
                         let intern = new Intern(answers.name, answers.id, answers.email, answers.extraInfo);
                         employees.push(intern);
-                        console.log(employees);
                     }
 
                     addTeam();
                 })
             })
         } else {
-            console.log(employees);
-            render(employees);
-            return false;
+            return render(employees);
         }
+    })
+    .then(function(response){
+        fs.writeFileSync(outputPath, response);
     })
 }
 
