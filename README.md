@@ -26,13 +26,15 @@
 
    Here are some screenshots of the working application after testing:
 
-   ![Screenshot of filled out prompts](./assets/images/Team-Generator-Node.png)
+   ![Screenshot of passing tests](./assets/images/team_generator_1.png)
 
-   ![Screenshot of newly created team.html file](./assets/images/Team-Generator-HTML.png)
+   ![Screenshot of filled out prompts](./assets/images/team_generator_2.png)
+
+   ![Screenshot of newly created team.html file](./assets/images/team_generator_3.png)
 
    Here is a link to a wakthrough video of the application during testing:
 
-   https://drive.google.com/file/d/1af9XeAOxC1HxyjnIUTMRHQCGtSqnvV2p/view?usp=sharing
+   https://drive.google.com/file/d/1PO7U2_6yDaFUstWen0xY2zYuPqrL5vel/view?usp=sharing
 
    ## Questions
    If you have any comments, questions, or concerns about this project, please post them [here](https://github.com/CalebParris/Team-Generator/issues) and I will respond as soon as I am able.
